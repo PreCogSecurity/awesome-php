@@ -1,9 +1,11 @@
-language: ruby
-rvm:
-  - 2.2
+language: node_js
+node_js:
+  - 22
+cache: npm
 before_script:
-  - gem install awesome_bot
+  - npm ci
 script:
-  - awesome_bot README.md --white-list amazon.com,igor.io,hoa-project.net,redis.io
+  - npm test
+  - npm run lint
 notifications:
   email: false

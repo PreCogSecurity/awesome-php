@@ -2,6 +2,8 @@
 
 A curated list of amazingly awesome PHP libraries, resources and shiny things.
 
+> **Note:** This repository is a curated resource list (an "awesome list"), not a software package. It contains no application code, dependencies or runtime. The test suite (`npm test`) validates the list's structure and entry format; see [Development](#development).
+
 ## Contributing
 Please see [CONTRIBUTING](https://github.com/ziadoz/awesome-php/blob/master/CONTRIBUTING.md) and [CODE-OF-CONDUCT](https://github.com/ziadoz/awesome-php/blob/master/CODE-OF-CONDUCT.md) for details.
 
@@ -18,6 +20,7 @@ Please see [CONTRIBUTING](https://github.com/ziadoz/awesome-php/blob/master/CONT
     - [Templating](#templating)
     - [Static Site Generators](#static-site-generators)
     - [HTTP](#http)
+    - [Scraping](#scraping)
     - [Middlewares](#middlewares)
     - [URL](#url)
     - [Email](#email)
@@ -75,10 +78,13 @@ Please see [CONTRIBUTING](https://github.com/ziadoz/awesome-php/blob/master/CONT
     - [PHP Websites](#php-websites)
     - [Other Websites](#other-websites)
     - [PHP Books](#php-books)
+    - [Other Books](#other-books)
     - [PHP Videos](#php-videos)
     - [PHP Reading](#php-reading)
     - [PHP Internals Reading](#php-internals-reading)
+    - [PHP Magazines](#php-magazines)
 - [Contributing](#contributing)
+- [Development](#development)
 
 ## Dependency Management
 *Libraries for dependency and package management.*
@@ -137,7 +143,7 @@ Please see [CONTRIBUTING](https://github.com/ziadoz/awesome-php/blob/master/CONT
 
 * [Bullet PHP](http://bulletphp.com/) - A micro framework for building REST APIs.
 * [Lumen](https://lumen.laravel.com) - A micro-framework by Laravel.
-* [Proton](https://github.com/alexbilbie/Proton) - A StackPHP compatible micro framework
+* [Proton](https://github.com/alexbilbie/Proton) - A StackPHP compatible micro framework.
 * [Silex](http://silex.sensiolabs.org/) - A micro framework built around Symfony2 components.
 * [Slim](http://www.slimframework.com/) - Another simple micro framework.
 
@@ -183,7 +189,7 @@ Please see [CONTRIBUTING](https://github.com/ziadoz/awesome-php/blob/master/CONT
 *Libraries for working with HTTP.*
 
 * [Buzz](https://github.com/kriswallsmith/Buzz) - Another HTTP client.
-* [Guzzle]( https://github.com/guzzle/guzzle) - A comprehensive HTTP client.
+* [Guzzle](https://github.com/guzzle/guzzle) - A comprehensive HTTP client.
 * [HTTPFul](https://github.com/nategood/httpful) - A chainable HTTP client.
 * [PHP VCR](http://php-vcr.github.io/) - A library for recording and replaying HTTP requests.
 * [Requests](https://github.com/rmccue/Requests) - A simple HTTP library.
@@ -201,10 +207,10 @@ Please see [CONTRIBUTING](https://github.com/ziadoz/awesome-php/blob/master/CONT
 *Libraries for building application using middlewares.*
 
 * [PSR7-Middlewares](https://github.com/oscarotero/psr7-middlewares) - Inspiring collection of handy middlewares.
-* [Relay](https://github.com/relayphp/Relay.Relay) - A PHP 5.5 PSR-7 middleware dispatcher
+* [Relay](https://github.com/relayphp/Relay.Relay) - A PHP 5.5 PSR-7 middleware dispatcher.
 * [Slim Middleware](https://github.com/slimphp/Slim-Middleware) - A collection of custom middleware for Slim.
 * [Stack](https://github.com/stackphp) - A library of stackable middleware for Silex/Symfony.
-* [zend-stratigility](https://github.com/zendframework/zend-stratigility) - Middleware for PHP built on top of PSR-7
+* [zend-stratigility](https://github.com/zendframework/zend-stratigility) - Middleware for PHP built on top of PSR-7.
 
 ## URL
 *Libraries for parsing URLs.*
@@ -221,7 +227,7 @@ Please see [CONTRIBUTING](https://github.com/ziadoz/awesome-php/blob/master/CONT
 * [Email Reply Parser](https://github.com/willdurand/EmailReplyParser) - An email reply parser library.
 * [Email Validator](https://github.com/nojacko/email-validator) - A small email address validation library.
 * [Fetch](https://github.com/tedious/Fetch) - An IMAP library.
-* [Mautic](https://github.com/mautic/mautic) - Email marketing automation
+* [Mautic](https://github.com/mautic/mautic) - Email marketing automation.
 * [PHPMailer](https://github.com/PHPMailer/PHPMailer) - Another mailer solution.
 * [Stampie](https://github.com/henrikbjorn/Stampie) - A library for email services such as [SendGrid](http://sendgrid.com), [PostMark](https://postmarkapp.com), [MailGun](http://www.mailgun.com) and [Mandrill](http://www.mandrill.com).
 * [SwiftMailer](http://swiftmailer.org/) - A mailer solution.
@@ -305,7 +311,7 @@ Please see [CONTRIBUTING](https://github.com/ziadoz/awesome-php/blob/master/CONT
 * [Shippable](https://app.shippable.com/) - A docker based continious integration platform for open source and private projects.
 * [Sismo](http://sismo.sensiolabs.org/) - A continuous testing server library.
 * [Travis CI](https://travis-ci.org/) - A continuous integration platform.
-* [Wercker](http://wercker.com/) - A continuous integration platform
+* [Wercker](http://wercker.com/) - A continuous integration platform.
 
 ## Documentation
 *Libraries for generating project documentation.*
@@ -403,7 +409,7 @@ Please see [CONTRIBUTING](https://github.com/ziadoz/awesome-php/blob/master/CONT
 * [PHP Debug Bar](http://phpdebugbar.com/) - A debugging toolbar.
 * [PHPBench](https://github.com/phpbench/phpbench) - A benchmarking Framework.
 * [PHPDBG](http://phpdbg.com/) - An interactive PHP debugger.
-* [Tideways.io](https://tideways.io/) - Monitoring and profiling tool
+* [Tideways.io](https://tideways.io/) - Monitoring and profiling tool.
 * [Tracy](https://github.com/nette/tracy) - A simple error detection, logging and time measuring library.
 * [xDebug](https://github.com/xdebug/xdebug) - A debug and profile tool for PHP.
 * [XHProf](https://github.com/phacility/xhprof) - A profiling tool originally developed by Facebook.
@@ -468,7 +474,7 @@ Please see [CONTRIBUTING](https://github.com/ziadoz/awesome-php/blob/master/CONT
 * [Hoa EventSource](https://github.com/hoaproject/Eventsource) - An event source library.
 * [Hoa WebSocket](https://github.com/hoaproject/Websocket) - Another web socket library.
 * [Icicle](https://github.com/icicleio/icicle) - An asynchronous library with coroutines, non-blocking I/O, and multithreading.
-* [Prooph Event Store](https://github.com/prooph/event-store) - An event source component to persist event messages
+* [Prooph Event Store](https://github.com/prooph/event-store) - An event source component to persist event messages.
 * [Ratchet](https://github.com/ratchetphp/Ratchet) - A web socket library.
 * [React](https://github.com/reactphp/react) - An event driven non-blocking I/O library.
 * [Rx.PHP](https://github.com/asm89/Rx.PHP) - A reactive extension library.
@@ -488,7 +494,7 @@ Please see [CONTRIBUTING](https://github.com/ziadoz/awesome-php/blob/master/CONT
 * [OmniPay](https://github.com/thephpleague/omnipay) - A framework agnostic multi-gateway payment processing library.
 * [Payum](https://github.com/payum/payum) - A payment abstraction library.
 * [Sebastian Money](https://github.com/sebastianbergmann/money) - Another library for working with monetary values.
-* [Shopware](https://github.com/shopware/shopware) - Highly customizable e-commerce software
+* [Shopware](https://github.com/shopware/shopware) - Highly customizable e-commerce software.
 * [Swap](https://github.com/florianv/swap) - An exchange rates library.
 * [Sylius](http://sylius.org/) - An open source e-commerce solution.
 
@@ -556,7 +562,7 @@ Libraries to help manage database schemas and migrations.
 * [Elastica](https://github.com/ruflin/Elastica) - A client library for ElasticSearch.
 * [ElasticSearch PHP](https://github.com/elastic/elasticsearch-php) - The official client library for [ElasticSearch](https://www.elastic.co/).
 * [Solarium](http://www.solarium-project.org/) - A client library for [Solr](http://lucene.apache.org/solr/).
-* [Sphinx Search](https://github.com/ripaclub/sphinxsearch) - Sphinx Search library provides SphinxQL indexing and searching features
+* [Sphinx Search](https://github.com/ripaclub/sphinxsearch) - Sphinx Search library provides SphinxQL indexing and searching features.
 * [SphinxQL query builder](http://foolcode.github.io/SphinxQL-Query-Builder/) - A query library for the [Sphinx](http://sphinxsearch.com/) search engine.
 
 ## Command Line
@@ -644,7 +650,7 @@ Libraries to help manage database schemas and migrations.
 * [Cake Validation](https://github.com/cakephp/validation) - Another validation library (CP).
 * [DMS Filter](https://github.com/rdohms/DMS-Filter) - An annotation filtering library.
 * [Filterus](https://github.com/ircmaxell/filterus) - A simple PHP filtering library.
-* [ISO-codes](https://github.com/ronanguilloux/IsoCodes) - A library for validating inputs according standards from ISO, International Finance, Public Administrations, GS1, Book Industry, Phone numbers & Zipcodes for many countries
+* [ISO-codes](https://github.com/ronanguilloux/IsoCodes) - A library for validating inputs according standards from ISO, International Finance, Public Administrations, GS1, Book Industry, Phone numbers & Zipcodes for many countries.
 * [MetaYaml](https://github.com/romaricdrigon/MetaYaml) - A schema validation library that supports YAML, JSON and XML.
 * [Respect Validation](https://github.com/Respect/Validation) - A simple validation library.
 * [Upload](https://github.com/brandonsavage/Upload) - A library for handling file uploads and validation.
@@ -654,7 +660,7 @@ Libraries to help manage database schemas and migrations.
 ## API
 *Libraries and web tools for developing APIs.*
 
-* [API Platform](https://api-platform.com ) - Expose in minutes an hypermedia REST API that embraces JSON-LD, Hydra format.
+* [API Platform](https://api-platform.com) - Expose in minutes an hypermedia REST API that embraces JSON-LD, Hydra format.
 * [Apigility](https://github.com/zfcampus/zf-apigility-skeleton) - An API builder built with Zend Framework 2.
 * [Drest](https://github.com/leedavis81/drest) - A library for exposing Doctrine entities as REST resource endpoints.
 * [HAL](https://github.com/blongden/hal) - A Hypertext Application Language (HAL) builder library.
@@ -694,7 +700,7 @@ Libraries to help manage database schemas and migrations.
 ## Notifications
 *Libraries for working with notification software.*
 
-* [JoliNotif](https://github.com/jolicode/JoliNotif) - A cross-platform library for desktop notification (support for Growl, notify-send, toaster, etc)
+* [JoliNotif](https://github.com/jolicode/JoliNotif) - A cross-platform library for desktop notification (support for Growl, notify-send, toaster, etc).
 * [Nod](https://github.com/filp/nod) - A notification library (e.g., Growl).
 * [Notification Pusher](https://github.com/Ph3nol/NotificationPusher) - A standalone library for device push notifications.
 * [Notificato](https://github.com/mac-cain13/notificato) - A library for handling push notifications.
@@ -713,8 +719,8 @@ Libraries to help manage database schemas and migrations.
 ## Internationalisation and Localisation
 *Libraries for Internationalization (I18n) and Localization (L10n).*
 
-* [Aura Intl](https://github.com/auraphp/Aura.Intl)
-* [Cake I18n](https://github.com/cakephp/i18n) - Message translation and localization for dates and numbers (CP)
+* [Aura Intl](https://github.com/auraphp/Aura.Intl) - A package of internationalization (i18n) tools.
+* [Cake I18n](https://github.com/cakephp/i18n) - Message translation and localization for dates and numbers (CP).
 
 ## Third Party APIs
 *Libraries for accessing third party APIs.*
@@ -724,7 +730,7 @@ Libraries to help manage database schemas and migrations.
 * [Digital Ocean](https://github.com/toin0u/DigitalOcean) - A library to interface with the Digital Ocean API.
 * [Dropbox SDK](https://github.com/dropbox/dropbox-sdk-php) - The official PHP Dropbox SDK library.
 * [Github](https://github.com/dsyph3r/github-api3-php) - A library to interface with the Github API.
-* [Mailgun](https://github.com/mailgun/mailgun-php) The official Mailgun PHP API.
+* [Mailgun](https://github.com/mailgun/mailgun-php) - The official Mailgun PHP API.
 * [PHP Github API](https://github.com/KnpLabs/php-github-api) - Another library to interface with the Github API.
 * [S3 Stream Wrapper](https://github.com/gwkunze/S3StreamWrapper) - A stream wrapper library for Amazon S3.
 * [Stripe](https://github.com/stripe/stripe-php) - The official Stripe PHP library.
@@ -769,7 +775,7 @@ Libraries to help manage database schemas and migrations.
 * [PHPStack](http://dunkels.com/adam/phpstack/) - A TCP/IP stack proof of concept written in PHP.
 * [print_o](https://github.com/koriym/print_o) - An object graph visualizer.
 * [Procrastinator](https://github.com/lstrojny/Procrastinator) - A library for running time consuming tasks.
-* [Prooph Service Bus](https://github.com/prooph/service-bus) - Lightweight message bus supporting CQRS and Micro Services
+* [Prooph Service Bus](https://github.com/prooph/service-bus) - Lightweight message bus supporting CQRS and Micro Services.
 * [RMT](https://github.com/liip/RMT) - A library for versioning and releasing software.
 * [sabre/vobject](https://github.com/fruux/sabre-vobject) - A library for parsing VCard and iCalendar objects.
 * [Slimdump](https://github.com/webfactory/slimdump) - An easy dumper tool for MySQL.
@@ -872,7 +878,7 @@ Various resources, such as books, websites and articles, for improving your PHP 
 ## PHP Books
 *Fantastic PHP-related books.*
 
-* [Functional Programming in PHP](https://www.phparch.com/books/functional-programming-in-php/) - This book will show you how to leverage these new PHP5.3+ features by understanding functional programming principles
+* [Functional Programming in PHP](https://www.phparch.com/books/functional-programming-in-php/) - This book will show you how to leverage these new PHP5.3+ features by understanding functional programming principles.
 * [Grumpy PHPUnit](https://leanpub.com/grumpy-phpunit) - A book about unit testing with PHPUnit by Chris Hartjes.
 * [Mastering Object-Orientated PHP](http://www.brandonsavage.net) - A book about object-orientated PHP by Brandon Savage.
 * [Modern PHP New Features and Good Practices](http://shop.oreilly.com/product/0636920033868.do) - A book about new PHP features and best practices by Josh Lockhart.
@@ -943,4 +949,40 @@ Various resources, such as books, websites and articles, for improving your PHP 
 ## PHP Magazines
 *Fantastic PHP-related magazines.*
 
-* [php[architect]](https://www.phparch.com/magazine/) - A monthly magazine dedicated to PHP.
+* [php\[architect\]](https://www.phparch.com/magazine/) - A monthly magazine dedicated to PHP.
+
+## Development
+
+This repository is a curated list, not a software package, so "building" it means validating the list itself. The validation suite checks the README's structure, table of contents, entry format, URLs and descriptions against the conventions in [CONTRIBUTING.md](CONTRIBUTING.md).
+
+Requirements: [Node.js](https://nodejs.org/) 18.13 or newer (see `.nvmrc`).
+
+Install dependencies:
+
+```sh
+npm install
+```
+
+Run the test suite:
+
+```sh
+npm test
+```
+
+Run the same validation as a standalone lint command:
+
+```sh
+npm run lint
+```
+
+Audit link liveness (opt-in maintenance tool; depends on the network and third-party sites, so it is not part of `npm test`):
+
+```sh
+npm run check:links
+```
+
+Run the test suite in an isolated container:
+
+```sh
+docker compose run --rm validate
+```

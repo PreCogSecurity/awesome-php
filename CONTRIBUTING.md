@@ -23,4 +23,11 @@ Also, please ensure your pull request adheres to the following guidelines:
 * Check your spelling and grammar.
 * Make sure your text editor is set to remove trailing whitespace.
 
+## Templates
+
+Please use the provided pull request and issue templates when contributing:
+
+* **[Pull Request Template](../.github/PULL_REQUEST_TEMPLATE.md)** — required for new library suggestions.
+* **[Issue Template](../.github/ISSUE_TEMPLATE.md)** — for reporting dead links or removal requests.
+
 Thank you for your suggestions!

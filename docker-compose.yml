@@ -1,0 +1,7 @@
+services:
+  validate:
+    image: node:22-alpine
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+    command: ["sh", "-c", "npm ci --ignore-scripts && npm test && npm run lint"]

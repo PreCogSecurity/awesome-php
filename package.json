@@ -1,0 +1,15 @@
+{
+  "name": "awesome-php",
+  "version": "1.0.0",
+  "description": "A curated list of amazingly awesome PHP libraries, resources and shiny things.",
+  "private": true,
+  "license": "WTFPL",
+  "engines": {
+    "node": ">=18.13"
+  },
+  "scripts": {
+    "test": "node --test",
+    "lint": "node scripts/validate.js",
+    "check:links": "node scripts/check-links.js"
+  }
+}
