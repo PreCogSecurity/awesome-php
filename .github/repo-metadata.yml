@@ -1,0 +1,5 @@
+content: awesome-list
+description: >
+  This repository is a curated "awesome list" of PHP libraries, resources
+  and tools.  It contains no application code, dependencies or runtime;
+  automated checks validate the Markdown structure and entry format.
