@@ -4,4 +4,8 @@ services:
     working_dir: /workspace
     volumes:
       - .:/workspace
-    command: ["sh", "-c", "npm ci --ignore-scripts && npm test && npm run lint"]
+    # Mirrors the offline part of CI: lint first (fast fail), then the test
+    # suite. `npm run test:coverage && npm run coverage:check` adds the
+    # coverage gate; `npm run audit` is deliberately left out because it
+    # needs registry access.
+    command: ["sh", "-c", "npm ci --ignore-scripts && npm run lint && npm test"]

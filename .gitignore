@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+jspm_packages/
+
+# Logs and diagnostic output
+*.log
+npm-debug.log*
+yarn-error.log*
+*.tsbuildinfo
+
+# Coverage / test artifacts
+coverage/
+coverage-summary.txt
+.nyc_output/
+*.lcov
+
+# Environment and secrets — this repository ships none, and a committed
+# .env is a committed credential. See SECURITY.md.
+.env
+.env.*
+!.env.example
+
+# Editor and OS noise
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db

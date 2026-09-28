@@ -1,0 +1,26 @@
+version: 2
+updates:
+  # The project declares no dependencies, so the npm manifest and its lockfile
+  # still need watching: a future devDependency arrives already pinned and
+  # audited rather than as an unversioned surprise.
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: 'chore(deps)'
+    labels:
+      - dependencies
+
+  # The CI workflow runs third-party actions; keeping them current is the
+  # cheapest supply-chain control available.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    commit-message:
+      prefix: 'chore(ci)'
+    labels:
+      - dependencies
+      - ci
