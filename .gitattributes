@@ -1,0 +1,9 @@
+# Normalise line endings in the repository and check text files out with LF.
+# `scripts/validate.js` fails on trailing whitespace and `node --test` output
+# is compared byte-for-byte in CI, so CRLF churn from Windows contributors
+# is a real (and noisy) source of diffs.
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.gif binary

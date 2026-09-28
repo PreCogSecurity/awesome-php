@@ -1,8 +1,8 @@
-# Awesome PHP [![Build Status](https://api.travis-ci.org/ziadoz/awesome-php.svg?branch=master)](https://travis-ci.org/ziadoz/awesome-php)
+# Awesome PHP [![CI](https://github.com/PreCogSecurity/awesome-php/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/PreCogSecurity/awesome-php/actions/workflows/ci.yml)
 
 A curated list of amazingly awesome PHP libraries, resources and shiny things.
 
-> **Note:** This repository is a curated resource list (an "awesome list"), not a software package. It contains no application code, dependencies or runtime. The test suite (`npm test`) validates the list's structure and entry format; see [Development](#development).
+> **Note:** This repository is a curated resource list (an "awesome list"), not a software package, and not a PHP application. It contains no application code, no dependencies and no runtime; the only executable code is the Node.js maintenance tooling in `scripts/` (a README validator and an opt-in link checker) which has **zero** third-party dependencies. `npm test` runs that tooling's test suite and validates the list's structure, entry format, links and headings; see [Development](#development). Security issues are handled as described in [SECURITY.md](SECURITY.md).
 
 ## Contributing
 Please see [CONTRIBUTING](https://github.com/ziadoz/awesome-php/blob/master/CONTRIBUTING.md) and [CODE-OF-CONDUCT](https://github.com/ziadoz/awesome-php/blob/master/CODE-OF-CONDUCT.md) for details.
@@ -955,12 +955,11 @@ Various resources, such as books, websites and articles, for improving your PHP 
 
 This repository is a curated list, not a software package, so "building" it means validating the list itself. The validation suite checks the README's structure, table of contents, entry format, URLs and descriptions against the conventions in [CONTRIBUTING.md](CONTRIBUTING.md).
 
-Requirements: [Node.js](https://nodejs.org/) 18.13 or newer (see `.nvmrc`).
-
-Install dependencies:
+Requirements: [Node.js](https://nodejs.org/) **22.12 or newer** (see `.nvmrc`). There are no third-party dependencies, so the install step has nothing to download:
 
 ```sh
-npm install
+npm ci          # reproducible install from package-lock.json
+npm install     # equivalent here; use it if you are changing scripts
 ```
 
 Run the test suite:
@@ -972,17 +971,46 @@ npm test
 Run the same validation as a standalone lint command:
 
 ```sh
-npm run lint
+npm run lint              # errors only
+npm run lint -- --warnings --strict   # every finding, warnings fail the build
+npm run lint -- --format=json         # machine-readable report
+npm run lint -- --format=github       # GitHub Actions annotations
 ```
 
-Audit link liveness (opt-in maintenance tool; depends on the network and third-party sites, so it is not part of `npm test`):
+Measure coverage and enforce the 80% threshold that CI applies (no extra
+dependency required — it uses Node's built-in coverage output):
+
+```sh
+npm run test:coverage
+npm run coverage:check
+```
+
+Run everything CI runs, in one command:
+
+```sh
+npm run verify             # lint + test + npm audit
+```
+
+Audit link liveness (opt-in maintenance tool; depends on the network and third-party sites, so it is not part of `npm test`). It refuses to contact anything that is not publicly routable, so a hostile or mistaken entry cannot be used to probe the maintainer's machine or network:
 
 ```sh
 npm run check:links
 ```
 
-Run the test suite in an isolated container:
+Run the same suite in an isolated container:
 
 ```sh
 docker compose run --rm validate
 ```
+
+**Environment variables**
+
+There is no `.env` file to create: the tooling reads the process environment directly and every variable is optional.
+
+| Variable                 | Used by             | Default | Description                                                              |
+| ------------------------ | ------------------- | ------- | ------------------------------------------------------------------------ |
+| `CHECK_LINKS_TIMEOUT_MS` | `npm run check:links` | `10000` | Per-request timeout in milliseconds. Values outside 100–120000 are clamped with a warning; a non-numeric value is an error rather than a silent "everything timed out". |
+
+**Continuous integration**
+
+`.github/workflows/ci.yml` runs on every push to `master` and on every pull request. It installs from the lockfile with `--ignore-scripts`, runs `npm audit --audit-level=high`, lints the README with inline annotations, runs the test suite and enforces the coverage threshold. Dependabot keeps `package.json` and the GitHub Actions versions current.

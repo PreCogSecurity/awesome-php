@@ -4,12 +4,24 @@
   "description": "A curated list of amazingly awesome PHP libraries, resources and shiny things.",
   "private": true,
   "license": "WTFPL",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PreCogSecurity/awesome-php.git"
+  },
+  "bugs": {
+    "url": "https://github.com/PreCogSecurity/awesome-php/issues"
+  },
   "engines": {
-    "node": ">=18.13"
+    "node": ">=22.12.0"
   },
   "scripts": {
     "test": "node --test",
+    "test:coverage": "node --test --experimental-test-coverage --test-coverage-include=\"scripts/**\" --test-coverage-exclude=\"test/**\"",
+    "coverage:check": "node scripts/check-coverage.js --min=80",
     "lint": "node scripts/validate.js",
-    "check:links": "node scripts/check-links.js"
+    "lint:fix-report": "node scripts/validate.js --format=github --warnings",
+    "check:links": "node scripts/check-links.js",
+    "audit": "npm audit --audit-level=high",
+    "verify": "npm run lint && npm test && npm run audit"
   }
 }

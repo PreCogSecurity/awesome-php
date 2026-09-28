@@ -1,0 +1,18 @@
+# Enforces the conventions CONTRIBUTING.md asks contributors to configure in
+# their editor: LF line endings, UTF-8, no tabs, no trailing whitespace and a
+# final newline. `scripts/validate.js` rejects README.md that breaks the
+# whitespace rules, so this keeps the check green for everyone.
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.md]
+# Markdown uses two trailing spaces for a hard line break; CONTRIBUTING.md
+# still requires trimmed trailing whitespace, so keep trimming.
+trim_trailing_whitespace = true

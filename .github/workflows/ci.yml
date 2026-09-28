@@ -4,16 +4,56 @@ on:
   push:
     branches: [master]
   pull_request:
+  workflow_dispatch:
+
+# Least privilege: this workflow only reads the repository. It never needs to
+# push, comment, create releases or read secrets, so no such scope is granted
+# to the actions it runs or to a compromised build step.
+permissions:
+  contents: read
+
+# A new push to the same branch supersedes the run in flight.
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   validate:
     runs-on: ubuntu-latest
+    # A hung job on a network-free check is a bug, not a reason to burn hours.
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          # .nvmrc is the single source of truth for the supported runtime.
+          node-version-file: .nvmrc
           cache: npm
-      - run: npm ci
-      - run: npm test
-      - run: npm run lint
+
+      - name: Install from the lockfile
+        # --ignore-scripts so that no dependency lifecycle script can execute
+        # during install. The project has no runtime dependencies, so nothing
+        # needs to run.
+        run: npm ci --ignore-scripts
+
+      - name: Audit dependencies
+        run: npm run audit
+
+      - name: Lint README conventions
+        # `--format=github` turns findings into inline annotations on the pull
+        # request diff; the message text is escaped by scripts/validate.js so a
+        # crafted README cannot forge annotations.
+        run: npm run lint -- --format=github --warnings
+
+      - name: Test
+        run: npm test
+
+      - name: Coverage report
+        # pipefail keeps a test failure from being masked by `tee`.
+        run: |
+          set -o pipefail
+          npm run test:coverage 2>&1 | tee coverage-summary.txt
+
+      - name: Enforce the 80% coverage threshold
+        run: npm run coverage:check -- --report=coverage-summary.txt
